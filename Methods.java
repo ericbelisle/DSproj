@@ -1,3 +1,18 @@
+/*
+Algorithm:
+insertion - DONE
+deletion - DONE
+merge sort - 
+linear search - DONE w/stack, hashmap
+
+Data Structure:
+Array - DONE
+LinkedList - DONE
+Stack - DONE
+HashMap - DONE
+*/
+
+
 import java.util.Stack;
 import java.util.LinkedList;
 import java.util.Random;
@@ -5,6 +20,29 @@ import java.util.HashMap;
 
 class Methods{
 
+//does this make me a bad person? I sleep sound at night.. 
+@SuppressWarnings("unchecked") 
+
+	public static void main(String args[]){
+		HashMap hm = populateHashMap(10);
+		Stack st = populateStack(10);
+		LinkedList<Integer> linked = populateLinkedList(10);
+		int[] intarray = populateArray(10);
+		
+		System.out.println(linearSearchStack(st, 1));
+		System.out.println(linearSearchHashMap(hm, 1));
+	
+	
+	}
+	
+	//linearSearch on HashMap
+	public static int linearSearchHashMap(HashMap<Integer, Integer> hm, int item){
+		for (int i = 0; i < hm.size(); i++){
+			if(hm.get(i).equals(item)) return i;
+		}
+		return 0;
+	}
+	
 	//populate HashMap method
 	public static HashMap populateHashMap(int size){
 	
@@ -22,6 +60,15 @@ class Methods{
 		return hm;
 
 	} 
+	
+	//linearSearch on stack
+	public static int linearSearchStack(Stack<Integer> st, int item){
+		for (int i = 0; i < st.size(); i++){
+			if(st.pop().equals(item)) return i;
+		}
+		return 0;
+	}
+
 	
 	//populate Stack method
 	public static Stack populateStack(int size){
@@ -60,7 +107,7 @@ class Methods{
 	} 
 	
 	//populate array method
-	public static int[] populateIntArray(int size){
+	public static int[] populateArray(int size){
 	
 		//creates intarray at size
 		int[] intarray = new int[size];
