@@ -2,7 +2,7 @@
 Algorithm:
 insertion - DONE
 deletion - DONE
-merge sort - 
+merge sort - DONE w/ Array, LinkedList
 linear search - DONE
 
 Data Structure:
@@ -24,17 +24,22 @@ class Methods{
 @SuppressWarnings("unchecked") 
 
 	public static void main(String args[]){
+		//populate data structures
 		HashMap hm = populateHashMap(10);
 		Stack st = populateStack(10);
 		LinkedList<Integer> linked = populateLinkedList(10);
 		int[] intarray = populateArray(10);
 		
 		System.out.println(linearSearchStack(st, 1));
+		
 		System.out.println(linearSearchHashMap(hm, 1));
+		
 		System.out.println(linearSearchLinkedList(linked, 1));
+		bubbleSortLinkedList(linked);
+		
 		System.out.println(linearSearchArray(intarray, 1));
-	
-	
+		bubbleSortArray(intarray);
+		
 	}
 	
 	//linearSearch on HashMap
@@ -70,7 +75,6 @@ class Methods{
 		}
 		return false;
 	}
-
 	
 	//populate Stack method
 	public static Stack populateStack(int size){
@@ -98,6 +102,23 @@ class Methods{
 		return false;
 	}
 	
+	public static void bubbleSortLinkedList(LinkedList<Integer> linked) {
+		
+		//create temp for bubblesort...
+    	int temp = 0;
+
+		//iterate through linkedlist, comparing each two elements to see if they are sorted.
+    	for (int i = 0; i < linked.size(); i++) {
+        	for (int j = 1; j < (linked.size() - i); j++) {
+				if (linked.get(j - 1) > linked.get(j)) {
+                	temp = linked.get(j - 1);
+                	linked.set(j - 1, linked.get(j));
+                	linked.set(j, temp);
+            	}
+            }
+    	}
+	}
+	
 	//populate LinkedList method
 	public static LinkedList populateLinkedList(int size){
 	
@@ -122,6 +143,23 @@ class Methods{
 			if(intarray[i] == item) return true;
 		}
 		return false;
+	}
+	
+	public static void bubbleSortArray(int[] intarray) {
+		
+		//create temp for bubblesort...
+    	int temp = 0;
+
+		//iterate through array, comparing each two elements to see if they are sorted.
+    	for (int i = 0; i < intarray.length; i++) {
+        	for (int j = 1; j < (intarray.length - i); j++) {
+				if (intarray[j - 1] > intarray[j]) {
+                	temp = intarray[j - 1];
+                	intarray[j - 1] = intarray[j];
+                	intarray[j] = temp;
+            	}
+            }
+    	}
 	}
 	
 	//populate array method
