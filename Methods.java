@@ -1,9 +1,28 @@
 import java.util.Stack;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.HashMap;
 
 class Methods{
 
+	//populate HashMap method
+	public static HashMap populateHashMap(int size){
+	
+		//creates HashMap
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+		//random number generator
+		Random random = new Random();
+		
+		//iterates to put random numbers in hash map up to size
+		for(int i = 0; i < size; i++){
+			hm.put(i, new Integer(random.nextInt()));
+		}
+		
+		//returns stack
+		return hm;
+
+	} 
+	
 	//populate Stack method
 	public static Stack populateStack(int size){
 	
@@ -57,26 +76,6 @@ class Methods{
 		return intarray;
 
 	}
-/*	
-	//populate array method
-	public static BST populateBST(int size){
-	
-		//creates BST
-		BST theBST = new BST();
-		//random number generator
-		Random random = new Random();
-		
-		//iterates to put random numbers in BST up to size
-		for(int i = 0; i < size; i++){
-			theBST.put(random.nextInt(), i);
-		}
-		
-		//returns BST theBST
-		return theBST;
-
-	}
-*/	
-	
 		
 }
 
