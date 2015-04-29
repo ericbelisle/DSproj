@@ -3,7 +3,7 @@ Algorithm:
 insertion - DONE
 deletion - DONE
 merge sort - 
-linear search - DONE w/stack, hashmap
+linear search - DONE
 
 Data Structure:
 Array - DONE
@@ -31,16 +31,18 @@ class Methods{
 		
 		System.out.println(linearSearchStack(st, 1));
 		System.out.println(linearSearchHashMap(hm, 1));
+		System.out.println(linearSearchLinkedList(linked, 1));
+		System.out.println(linearSearchArray(intarray, 1));
 	
 	
 	}
 	
 	//linearSearch on HashMap
-	public static int linearSearchHashMap(HashMap<Integer, Integer> hm, int item){
+	public static boolean linearSearchHashMap(HashMap<Integer, Integer> hm, int item){
 		for (int i = 0; i < hm.size(); i++){
-			if(hm.get(i).equals(item)) return i;
+			if(hm.get(i).equals(item)) return true;
 		}
-		return 0;
+		return false;
 	}
 	
 	//populate HashMap method
@@ -62,11 +64,11 @@ class Methods{
 	} 
 	
 	//linearSearch on stack
-	public static int linearSearchStack(Stack<Integer> st, int item){
+	public static boolean linearSearchStack(Stack<Integer> st, int item){
 		for (int i = 0; i < st.size(); i++){
-			if(st.pop().equals(item)) return i;
+			if(st.pop().equals(item)) return true;
 		}
-		return 0;
+		return false;
 	}
 
 	
@@ -88,6 +90,14 @@ class Methods{
 
 	} 
 	
+	//linearSearch on LinkedList
+	public static boolean linearSearchLinkedList(LinkedList<Integer> linked, int item){
+		for (int i = 0; i < linked.size(); i++){
+			if(linked.get(i).equals(item)) return true;
+		}
+		return false;
+	}
+	
 	//populate LinkedList method
 	public static LinkedList populateLinkedList(int size){
 	
@@ -105,6 +115,14 @@ class Methods{
 		return linked;
 
 	} 
+	
+	//linearSearch on Array
+	public static boolean linearSearchArray(int[] intarray, int item){
+		for (int i = 0; i < intarray.length; i++){
+			if(intarray[i] == item) return true;
+		}
+		return false;
+	}
 	
 	//populate array method
 	public static int[] populateArray(int size){
