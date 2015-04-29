@@ -1,17 +1,19 @@
 /*
-Algorithm:
-insertion at End - DONE
-deletion at Beginning - 
-merge sort - DONE w/ Array, LinkedList
-linear search - DONE
-
-Data Structure:
-Array - DONE
-LinkedList - DONE
-Stack - DONE
-HashMap - DONE
+* Authors: Eric Belisle and Sara Hakkoum
+* Date: 04/29/2015
+* 
+* Framingham State University - Spring 2015
+* CSCI 271 - Data Structures Final Project
+* Professor David Keil
+*
+* Methods.java
+* 
+* This class contains all the necessary methods to populate our project's
+* data structures and test the algorithms on them.
+* The data structures used are: array, linked list, stack, and hash map.
+* The algorithms user are: insertion at end, deletion at beginning,
+* bubble sort, and linear search.
 */
-
 
 import java.util.Stack;
 import java.util.LinkedList;
@@ -21,34 +23,7 @@ import java.util.HashMap;
 class Methods{
 
 //does this make me a bad person? I sleep sound at night.. 
-@SuppressWarnings("unchecked") 
-
-	public static void main(String args[]){
-		//populate data structures
-		HashMap hm = populateHashMap(10);
-		Stack st = populateStack(10);
-		LinkedList<Integer> linked = populateLinkedList(10);
-		int[] intarray = populateArray(10);
-		
-		System.out.println(linearSearchStack(st, 1));
-		insertInStack(st);
-		deleteFromStack(st);
-		
-		System.out.println(linearSearchHashMap(hm, 1));
-		insertInHashMap(hm);
-		deleteFromHashMap(hm);
-		
-		System.out.println(linearSearchLinkedList(linked, 1));
-		bubbleSortLinkedList(linked);
-		insertInLinkedList(linked);
-		deleteFromLinkedList(linked);
-		
-		System.out.println(linearSearchArray(intarray, 1));
-		bubbleSortArray(intarray);
-		insertInArray(intarray);
-		deleteFromArray(intarray);
-		
-	}
+@SuppressWarnings("unchecked")
 	
 	//insert in HashMap
 	public static void insertInHashMap(HashMap<Integer, Integer> hm){
@@ -237,8 +212,10 @@ class Methods{
 	//delete in array
 	public static void deleteFromArray(int[] intarray){
 		int temp = 0;
+
 		//iterates entire array left
 		System.arraycopy(intarray, 1, intarray, 0, intarray.length - 1);
+
 		/*
 		This is a prime example of what we don't do:
 		for (int i = 0; i < intarray.length; i++){
@@ -262,8 +239,5 @@ class Methods{
 		
 		//returns LinkedList linked
 		return intarray;
-
-	}
-		
+	}		
 }
-
